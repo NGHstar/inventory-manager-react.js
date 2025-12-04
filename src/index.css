@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-bg text-text;
+}
+
+@theme {
+  --color-bg: #1e1e1e;
+  --color-text: #d2d2d2;
+  --color-card: #232324;
+}
+
+.badge {
+  @apply flex justify-center items-center bg-slate-600 border-slate-500 border-2 text-slate-200 w-7 h-7 rounded-full;
+}
+
+.container {
+  @apply max-w-xl mx-auto;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  @apply rounded-xl border-slate-600 border-2 text-slate-300 outline-0 py-2 px-3 text-lg;
+}
+
+option:checked {
+  color: wheat;
+}
+
+select {
+  justify-content: space-between;
+
+  &,
+  &::picker(select) {
+    appearance: base-select;
+    border-radius: 10px;
+    border: 2px solid var(--color-slate-600);
+    background-color: var(--color-slate-600);
+  }
+
+  &::picker(select) {
+    margin-block-end: 0.5rem;
+    margin-block-start: 0.5rem;
+  }
+
+  &::picker-icon {
+    display: none;
+  }
+
+  .picker {
+    transform: translateY(5px);
+  }
+  /* selectedcontent {
+    transition: translate 1s ease-in-out, opacity 1s;
+
+    @starting-style {
+      opacity: 0;
+      translate: 0% 100%;
+    }
+  } */
+}
+
+label {
+  @apply block mb-1.5 text-slate-400 font-medium translate-x-1 text-lg;
+}
+
+.btn {
+  @apply py-2 rounded-xl border-2 border-slate-500  font-medium text-[1.1rem] cursor-pointer hover:opacity-70;
+}
+
+.btn--primary {
+  @apply bg-slate-400 text-slate-700;
+}
+
+.btn--secondary {
+  @apply text-slate-400;
+}
+
+::-webkit-scrollbar {
+  @apply w-3;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-700;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+div::-webkit-scrollbar {
+  @apply h-1;
+}
+
+div::-webkit-scrollbar-track {
+  @apply bg-transparent mx-2;
+}
+
+div::-webkit-scrollbar-thumb {
+  @apply bg-slate-500 rounded-full;
+}
+
+div::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
